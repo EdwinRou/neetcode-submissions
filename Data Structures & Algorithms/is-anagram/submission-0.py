@@ -1,16 +1,13 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        def string_to_dict(s: str) ->bool:
-            s_dict = {}
-            for letter in s:
-                if letter in s_dict:
-                    s_dict[letter] +=1
-                else :
-                    s_dict[letter] = 1
-            return s_dict
-        s_dict, t_dict = string_to_dict(s), string_to_dict(t)
-        if s_dict == t_dict:
-            return True
-        else:
-            return False
-        
+        def word_dict(word):
+            word_dict = {}
+            for letter in word:
+                if letter in word_dict:
+                    word_dict[letter] += 1
+                else:
+                    word_dict[letter] = 1
+            return word_dict
+
+        s_dict, t_dict = word_dict(s), word_dict(t)
+        return s_dict == t_dict
